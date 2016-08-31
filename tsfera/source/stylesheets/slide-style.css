@@ -1,0 +1,8 @@
+#slideleft:hover {background-position:-0 -1400px}
+#slideright:hover {background-position:-50px 90px}
+#slider {float:left; position:relative; overflow:auto; width:100%;min-width:1024px; height:196px}
+#slider ul {position:absolute; list-style:none; top:0; left:0}
+#slider li {float:left; min-width:1024px;max-width:1400px; height:235px}
+.pagination {position:absolute; top:160px; right:10px; list-style:none; height:25px}
+.pagination li {float:left; cursor:pointer; height:22px; width:29px; text-align:center;background-image:url("../images/icons/button-banner.png"); padding-top:5px;margin:0 4px 0 0;color:#ffffff;font-size: 18px;font-weight: bold;}
+.pagination li:hover, li.current {background-image:url("../images/icons/button-banner-hover.png")}

@@ -1,0 +1,47 @@
+#slideleft:hover {background-position:-0 -720px}
+#slideright:hover {background-position:-50px 90px}
+#slider {float:left; position:relative; overflow:auto; width:100%;width:718px; height:357px; top: 1px; left: 1px; border: 1px solid #F9C700;}
+#slider ul {position:absolute; list-style:none; top:0; left:0;}
+#slider li {float:left; min-width:718px;max-width:718px; height:357px}
+.pagination {position:absolute; top:360px; right:60px; list-style:none; height:25px}
+.pagination li {float:left; cursor:pointer; height:19px; width:24px; text-align:center;background-image:url("../images/icons/button_banner.png"); padding-top:3px;margin:0 4px 0 0;color:#ffffff;font-size: 12px;font-weight: bold;}
+.pagination li:hover {background-image:url("../images/icons/button_banner_hover.png")}
+.pagination li.current {background-image:url("../images/icons/button_banner_active.png"); color:#000000;}
+
+.border_banner {
+    width: 720px;
+    height: 359px;
+
+}
+.left_top_banner {
+    position: absolute;
+    left:1px;
+    top:32px;
+    width: 5px;
+    height: 5px;
+    z-index: 100;
+}
+.right_top_banner {
+    position: absolute;
+    right:46px;
+    top:32px;
+    width: 5px;
+    height: 5px;
+    z-index: 100;
+}
+.left_bottom_banner {
+    position: absolute;
+    left:1px;
+    bottom:8px;
+    width: 5px;
+    height: 5px;
+    z-index: 100;
+}
+.right_bottom_banner {
+    position: absolute;
+    right:46px;
+    bottom:8px;
+    width: 5px;
+    height: 5px;
+    z-index: 100;
+}

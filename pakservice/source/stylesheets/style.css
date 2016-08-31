@@ -1,0 +1,743 @@
+@import "reset.css";
+
+.wrapper-1 {
+    width: 1024px;
+    margin: 0 auto;
+    height: auto !important;
+}
+.wrapper-2 {
+    width: 1024px;
+    margin: 0 auto;
+    height: auto !important;
+}
+.wrapper-2-all {
+    background: url(../images/back_white.png);
+    padding-bottom: 20px;
+}
+
+.clear {
+    clear: both;
+    font-size: 1px;
+    height: 0;
+    line-height: 1px;
+}
+
+/* Header
+-----------------------------------------------------------------------------*/
+.grey_line {
+    background-image: url(../images/back_top.png);
+    background-color: #3E3E3E;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.grey_fon {
+    background-image: url(../images/back_grey.png);
+    width: 100%;
+    height: 165px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+}
+.shadow {
+    height: 100px;
+    margin-top: 65px;
+    background-image: url(../images/shadow.png);
+    border-bottom: 1px solid #FFFFFF;
+}
+
+#header {
+    height: 205px;
+    position: relative;
+}
+
+.top {
+    width: 100%;
+    position: relative;
+}
+
+.price,
+.mail,
+.zajavki,
+.zvonok {
+    float: left;
+}
+.price a,
+.mail a,
+.zajavki a,
+.zvonok a {
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.price {
+    width: 170px;
+    padding: 10px 30px 10px 100px;
+}
+.price a i{
+    float: left;
+    padding-right: 10px;
+    background:url(../images/icons/arrow_down.png) 0 0 no-repeat;
+    display: block;
+    height: 16px;
+    width: 16px;
+}
+
+.mail {
+    width: 150px;
+    padding: 10px 40px 10px 50px;
+}
+.mail a i {
+    float: left;
+    margin-top: 3px;
+    padding-right: 10px;
+    background:url(../images/icons/mail.png) 0 0 no-repeat;
+    display: block;
+    height: 12px;
+    width: 16px;
+}
+
+.zajavki {
+    width: 150px;
+    padding: 10px 10px 10px 20px;
+}
+.zajavki a i {
+    float: left;
+    padding-right: 10px;
+    background:url(../images/icons/zajavki.png) 0 0 no-repeat;
+    display: block;
+    height: 20px;
+    width: 16px;
+}
+
+.zvonok {
+    width: 130px;
+    padding: 10px 110px 10px 60px;
+}
+.zvonok a i {
+    float: left;
+    margin-top: 3px;
+    padding-right: 5px;
+    background:url(../images/icons/zvonok.png) 0 0 no-repeat;
+    display: block;
+    height: 16px;
+    width: 16px;
+}
+
+.logo, .about, .time {
+    float: left;
+}
+
+.logo {
+    width: 270px;
+    padding-top: 25px;
+    padding-left: 40px;
+}
+.logo span {
+    padding-left: 10px;
+    display: block;
+    color: #000000;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.about {
+    width: 360px;
+    padding-top: 36px;
+    color: #3C3C3C;
+}
+.about span {
+    display: block;
+    padding-bottom: 20px;
+    font-size: 18px;
+}
+
+.time {
+    width: 300px;
+    padding-top: 37px;
+    padding-left: 30px;
+}
+.time span {
+    display: block;
+    padding-top: 19px;
+}
+
+
+.top_menu {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+.top_menu ul {
+    width: 100%;
+    margin-left: 15px;
+}
+.top_menu ul li {
+    margin-right: -5px;
+    text-transform: uppercase;
+    display: inline-block;
+    background-image: url(../images/top_menu.png);
+    -webkit-transform: skewX(-30deg); /* Для Safari и Chrome */
+    -moz-transform: skewX(-30deg); /* Для Firefox */
+    -o-transform: skewX(-30deg); /* Для Opera */
+    -ms-transform: skewX(-30deg); /* Для IE */
+    transform: skewX(-30deg); /* CSS3 */
+}
+.top_menu ul li a {
+    color: #fff; /* Цвет ссылок */
+    display: block; /* Блочный элемент */
+    padding: 10px 37px; /* Поля вокруг текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    -webkit-transform: skewX(30deg); /* Для Safari и Chrome */
+    -moz-transform: skewX(30deg); /* Для Firefox */
+    -o-transform: skewX(30deg); /* Для Opera */
+    -ms-transform: skewX(30deg); /* Для IE */
+    transform: skewX(30deg); /* CSS3 */
+}
+.top_menu ul li.selected {
+    background: none;
+    font-weight: bold;
+}
+.top_menu ul li.selected a {
+    color: #006FA2;
+}
+.top_menu ul li.selected:hover a {
+    color: #FFFFFF;
+    font-weight: normal;
+}
+.top_menu ul li:hover {
+    background-image: url(../images/top_menu_hover.png);
+}
+.top_menu ul li:first-child a {
+    padding: 10px 47px;
+}
+.top_menu ul li:last-child a {
+    padding: 10px 47px;
+}
+
+/* Middle
+-----------------------------------------------------------------------------*/
+#middle {
+    width: 100%;
+    height: 1%;
+    position: relative;
+}
+#middle:after {
+    content: '.';
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+}
+/* Side Left
+-----------------------------------------------------------------------------*/
+.white_fon {
+    background-image: url(../images/back_white.png);
+    background-repeat: repeat;
+    width: 100%;
+    height: 112%;
+    position: absolute;
+    top: 205px;
+    left: 0;
+}
+#sideLeft {
+    float: left;
+    width: 240px;
+    position: relative;
+}
+.search {
+    padding: 5px;
+    width: 170px;
+    margin-top: 15px;
+}
+.search_button {
+    background: url("../images/icons/search.png") no-repeat scroll 50% 50% transparent;
+    border: medium none;
+    box-shadow: none;
+    cursor: pointer;
+    height: 10px;
+    margin: 15px 0 0 -30px;
+    width: 12px;
+}
+.left_menu {
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #000000;
+}
+.left_menu > ul {
+    padding-top: 10px;
+    font-weight: normal;
+    text-transform: none;
+}
+.left_menu > ul > li {
+    padding-bottom: 10px;
+    line-height: 1;
+}
+.left_menu > ul > li span {
+    padding-left: 20px;
+    display: block;
+}
+.left_menu > ul > li > a:hover {
+    text-decoration: underline;
+}
+.left_menu > ul > li > a i {
+    background:url(../images/icons/arrow_left_menu.png) 0 0 no-repeat;
+    float: left;
+    display: block;
+    height: 5px;
+    width: 15px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+.left_menu > ul > li > a.selected {
+    color: #000000;
+}
+.left_menu > ul > li > a.selected i {
+    background:url(../images/icons/arrow_left_menu_selected.png) 0 0 no-repeat;
+    float: left;
+    display: block;
+    height: 5px;
+    width: 15px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+/* Center
+-----------------------------------------------------------------------------*/
+#content {
+    padding: 0 0 0 250px;
+}
+
+.innerContent {
+    width: 540px;
+    margin: 15px;
+    float: left;
+}
+.about_company {
+    margin-top: 30px;
+}
+.novelty {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.novelty > span {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000000;
+}
+.tovar {
+    float: left;
+    position: relative;
+    width: 165px;
+    height: 245px;
+    margin-right: 15px;
+    border: 1px solid #BFDA75;
+}
+#last {
+    margin-right: 0;
+}
+.tovar > a {
+    padding: 10px;
+    display: block;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #647659;
+}
+.tovar > a:hover {
+    color: #75A659;
+    text-decoration: underline;
+}
+.tovar > .img_tov {
+    position: absolute;
+    height: 162px;
+    bottom: 0;
+}
+.new_tovar {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+}
+.tovar_lid {
+    float: left;
+    position: relative;
+    width: 165px;
+    height: 245px;
+    margin-right: 15px;
+    border: 1px solid #89CEFE;
+}
+#last_lid {
+    margin-right: 0;
+}
+.tovar_lid > a {
+    padding: 10px;
+    display: block;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #0A74A5;
+}
+.tovar_lid > a:hover {
+    color: #26ABEF;
+    text-decoration: underline;
+}
+.tovar_lid > .img_tov {
+    position: absolute;
+    height: 162px;
+    bottom: 0;
+}
+.lid_tovar {
+    position: absolute;
+    top: -8px;
+    right: -7px;
+}
+.catalog {
+    position: relative;
+    margin-top: 30px;
+}
+.catalog h2 {
+    text-transform: uppercase;
+}
+.catalog h2 a {
+    padding-left: 20px;
+    text-transform: none;
+    font-size: 12px;
+    text-decoration: underline;
+}
+.catalog img {
+    float: left;
+    margin-top: 5px;
+    border: 1px solid #5CA9C5;
+}
+.catalog p {
+    margin-left: 120px;
+    font-size: 12px;
+}
+.kartochka {
+    margin-top: 30px;
+}
+.kartochka > div {
+    float: right;
+    width: 180px;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+.kartochka > div > a > img {
+    margin-left: 2px;
+}
+.kartochka > div > div {
+    margin-top: 5px;
+}
+.kartochka > div img {
+    border: 1px solid #5CA9C5;
+}
+.small_photo img {
+    float: left;
+    margin: 0 1px;
+}
+.kartochka > p {
+    padding-top: 17px;
+    font-size: 12px;
+}
+.param {
+    border-collapse: separate;
+    border-spacing: 5px 5px;
+}
+.param tr td {
+    font-weight: normal;
+    padding: 2px 5px;
+    font-size: 12px;
+}
+.param tr td.param_1 {
+    width: 240px;
+    padding: 5px;
+    font-size: 14px;
+    background-color: #656565;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.param tr td.param_2 {
+    width: 40px;
+    padding: 5px;
+    font-size: 14px;
+    background-color: #656565;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.param_grey {
+    background: #DFDFDF;
+}
+.feed-back {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    font-size: 12px;
+    color: #000000;
+}
+.feed-back tr td {
+    width: 50%;
+    vertical-align: middle;
+}
+.feed-back tr td input {
+    padding: 5px;
+    width: 170px;
+}
+.feed-back span {
+    color: #0B75A6;
+    font-weight: bold;
+}
+.kartochka > p > span {
+    color: #0B75A6;
+}
+#feed-top {
+    vertical-align: top;
+}
+.X {
+    background-image: url("../images/icons/X.png");
+    display: block;
+    float: left;
+    height: 9px;
+    margin-right: 4px;
+    margin-top: 4px;
+    width: 9px;
+}
+.button {
+    background-image: url("../images/top_menu.png");
+    border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 40px;
+    padding: 0 30px;
+}
+.button:hover {
+    background-image: url("../images/top_menu_hover.png");
+}
+
+/* Side Right
+-----------------------------------------------------------------------------*/
+.sideRight {
+    float: right;
+    margin-right: 25px;
+    width: 179px;
+}
+.sale {
+    position: relative;
+    height: 290px;
+    margin-top: 40px;
+    border: 1px solid #D8B1B1;
+    background: #FFFFFF;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FFFFFF), to(#EBECEC));
+    background: -webkit-linear-gradient(#FFFFFF, #EBECEC);
+    background: -moz-linear-gradient(#FFFFFF, #EBECEC);
+    background: -ms-linear-gradient(#FFFFFF, #EBECEC);
+    background: -o-linear-gradient(#FFFFFF, #EBECEC);
+    background: linear-gradient(#FFFFFF, #EBECEC);
+}
+.sale span {
+    display: block;
+    margin: 15px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+}
+.sale > a {
+    display: block;
+    margin: 0 15px 15px;
+    color: #E27171;
+}
+.sale > a:hover {
+    text-decoration: underline;
+}
+.sale > .img_sale {
+    position: absolute;
+    height: 176px;
+    bottom: 1px;;
+}
+.sale_tovar {
+    position: absolute;
+    top: -8px;
+    right: -7px;
+}
+.sale_button {
+    display: block;
+    padding-top: 15px;
+    padding-left: 50px;
+    height: 35px;
+    border: 1px solid #E29393;
+    color: #FFFFFF;
+    background: #F48282;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#F48282), to(#DF6262));
+    background: -webkit-linear-gradient(#F48282, #DF6262);
+    background: -moz-linear-gradient(#F48282, #DF6262);
+    background: -ms-linear-gradient(#F48282, #DF6262);
+    background: -o-linear-gradient(#F48282, #DF6262);
+    background: linear-gradient(#F48282, #DF6262);
+}
+.sale_button:hover {
+    color: #FFFFFF;
+    background: #DF6262;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#DF6262), to(#B25151));
+    background: -webkit-linear-gradient(#DF6262, #B25151);
+    background: -moz-linear-gradient(#DF6262, #B25151);
+    background: -ms-linear-gradient(#DF6262, #B25151);
+    background: -o-linear-gradient(#DF6262, #B25151);
+    background: linear-gradient(#DF6262, #B25151);
+}
+.news_index {
+    padding: 10px 15px;
+    border: 1px solid #6CC0F6;
+    background-color: #FFFFFF;
+}
+.news_index img {
+    padding-left: 20px;
+}
+.news_index > span {
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.news_index > a {
+    padding-left: 10px;
+    font-size: 12px;
+}
+.news_index > a:hover {
+    text-decoration: underline;
+}
+.new {
+    padding: 10px 0 0;
+}
+.new > span {
+    font-size: 10px;
+}
+.new > a {
+    display: block;
+    font-size: 12px;
+    line-height: 1.2;
+}
+.new > a:hover {
+    text-decoration: underline;
+}
+.new > p {
+    display: block;
+    padding-top: 5px;
+    padding-left: 10px;
+    font-size: 11px;
+    line-height: 1.2;
+}
+/* Footer
+-----------------------------------------------------------------------------*/
+#footer {
+    width:100%;
+    position: relative;
+}
+.bottom_grey_line {
+    background-image: url(../images/back_top.png);
+}
+.menu_bottom {
+    font-size: 12px;
+    height: 30px;
+    margin: 0 auto;
+    width: 1024px;
+    padding-top: 10px;
+}
+.menu_bottom ul li {
+    display: inline;
+    padding-right: 50px;
+}
+.menu_bottom ul li a {
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+.menu_bottom ul li a:hover {
+    color: #36A5DE;
+    text-decoration: underline;
+}
+
+.bottom_line {
+    background-color: #D8DADA;
+    font-size: 12px;
+    height: 105px;
+    margin: 0 auto;
+    width: 1024px;
+    padding-top: 25px;
+    color: #4D4D4E
+}
+.logo_bottom {
+    width: 200px;
+    float: left;
+}
+
+.about_bottom {
+    margin-left: 300px;
+    width: 400px;
+}
+.about_bottom span {
+    display: block;
+    padding-bottom: 10px;
+}
+
+.develop {
+    float: right;
+    padding-right: 120px;
+}
+.develop a {
+    padding-right: 15px;
+    color: #4C4C4C;
+    text-decoration: underline;
+}
+.develop a:hover {
+    text-decoration: none;
+}
+.develop a.spichka {
+    background-image: url(../images/logo_spichka.png);
+    width: 107px;
+    height: 40px;
+    position: absolute;
+    top: 55px;
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

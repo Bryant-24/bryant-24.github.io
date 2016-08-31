@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+    <title>Техносфера</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="stylesheets/style.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/slide-style.css" />
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="scripts/jquery.fittext.js"></script>
+    <script src="scripts/resizeElement.js"></script>
+    <script type="text/javascript" src="scripts/slide-script.js"></script>
+
+</head>
+
+<body onresize="resizeElement()">
+
+<div id="wrapper">
+
+    <!--Верхняя черная линия-->
+    <div class="black_line"></div>
+
+    <!--Белый фон логотипа и меню-->
+    <div class="white_line"></div>
+
+    <header id="header">
+
+        <div class="map">
+            <a href="#"><i></i>Карта проезда</a>
+        </div>
+
+        <div class="about">
+            <div class="about_phone">
+                <span>Телефон:</span> +7(343)201 78 70 <span>|</span> +7(343)201 70 78
+            </div>
+            <div class="about_fax">
+                <span>Факс:</span> +7(343)221 30 25
+            </div>
+
+            <div class="about_email">
+                <span>E-mail:</span> <a href="#">info@t-sfera.com</a>
+            </div>
+        </div>
+
+        <div class="auth">
+            <a href="#">Вход</a> <a href="#">Регистрация</a>
+        </div>
+
+        <div class="clear"></div>
+
+        <table class="logo">
+            <tr>
+                <td>
+                    <div>
+                        <a href="#"><img src="images/logo.png" alt="Photo" width="271" height="76" /></a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+        <div class="right">
+
+            <ul class="menu">
+                <li class="selected"><a href="#">Главная</a></li>
+                <li><a href="#">О компании</a></li>
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="#">Новости</a></li>
+                <li><a href="#">Цены</a></li>
+                <li><a href="#">Склад</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+
+        </div>
+
+        <div class="basket">
+            <p>В коризине: <a href="#">15 товаров<i></i></a></p>
+            <p>На сумму: <b>250 000 уе</b></p>
+        </div>
+
+    </header><!-- #header-->
+
+    <section id="middle">
+
+        <div class="banner">
+                <div class="sliderbutton" id="slideleft"></div>
+                <div id="slider">
+                    <ul>
+                        <li><img src="photos/1.jpg" /></li>
+                        <li><img src="photos/2.jpg" /></li>
+                        <li><img src="photos/3.jpg" /></li>
+                        <li><img src="photos/4.jpg" /></li>
+                        <li><img src="photos/5.jpg" /></li>
+                        <li><img src="photos/6.jpg" /></li>
+                        <li><img src="photos/7.jpg" /></li>
+                        <li><img src="photos/8.jpg" /></li>
+                        <li><img src="photos/9.jpg" /></li>
+                        <li><img src="photos/10.jpg" /></li>
+                        <li><img src="photos/11.jpg" /></li>
+
+                    </ul>
+                </div>
+                <div class="sliderbutton" id="slideright"></div>
+                <ul id="pagination" class="pagination">
+                    <li onclick="slideshow.pos(0)">1</li>
+                    <li onclick="slideshow.pos(1)">2</li>
+                    <li onclick="slideshow.pos(2)">3</li>
+                    <li onclick="slideshow.pos(3)">4</li>
+                    <li onclick="slideshow.pos(4)">5</li>
+                    <li onclick="slideshow.pos(5)">6</li>
+                    <li onclick="slideshow.pos(6)">7</li>
+                    <li onclick="slideshow.pos(7)">8</li>
+                    <li onclick="slideshow.pos(8)">9</li>
+                    <li onclick="slideshow.pos(9)">10</li>
+                    <li onclick="slideshow.pos(10)">11</li>
+                </ul>
+        </div>
+
+        <script type="text/javascript">
+            var slideshow=new TINY.slider.slide('slideshow',{
+                id:'slider',
+                auto:4,
+                resume:false,
+                vertical:false,
+                navid:'pagination',
+                activeclass:'current',
+                position:0,
+                rewind:false,
+                elastic:true,
+                left:'slideleft',
+                right:'slideright'
+            });
+        </script>
+
+        <div class="clear"></div>
+        <br />
+
+        <aside id="sideLeft">
+
+            <ul class="left_menu">
+                <li><a href="#">Siemens</a></li>
+                    <ul>
+                        <img src="images/icons/arrow-lef_menu.png" />
+                        <li><a href="#">&ndash; Микроконтроллеры</a></li>
+                        <li><a href="#">&ndash; Контроллеры</a></li>
+                        <li><a href="#">&ndash; Распределенная периферия</a></li>
+                    </ul>
+                <li><a href="#">Simatic</a></li>
+                <li><a href="#">Ge fanuc</a></li>
+                <li><a href="#">Emerson</a></li>
+                <li><a href="#">Mitsubishi electric</a></li>
+                <li><a href="#">Rittal</a></li>
+                <li><a href="#">Phoenix conact</a></li>
+                <li><a href="#">Endress+Hauser</a></li>
+                <li><a href="#">Pepperl+Fuchs</a></li>
+                <li><a href="#">Sick</a></li>
+                <li><a href="#">Turck</a></li>
+                <li><a href="#">Helukabel</a></li>
+                <li><a href="#">Abb</a></li>
+                <li><a href="#">Balluff</a></li>
+                <li><a href="#">Samson</a></li>
+                <li class="all_brends"><a href="#">Посмотреть все бренды <i></i></a></li>
+            </ul>
+
+            <div class="course">
+                <div class="course_name">
+                    Курс валют
+                </div>
+                <div class="course_left">
+                    USD <span>ЦБ</span>
+                    <div class="course_right">
+                        32,0142
+                    </div>
+                </div>
+                <div class="course_left">
+                    ЕВРО <span>ЦБ</span>
+                    <div class="course_right">
+                        32,0142
+                    </div>
+                </div>
+            </div>
+
+            <div class="right_banner">
+                <img src="images/leftbanner.png" width="241" height="352" />
+                <span class="bottom_right_banner">
+                    <a href ="#">Подробнее <i></i></a>
+                </span>
+            </div>
+
+            <div class="news">
+                <span class="news_index">Новости</span>
+                <ul>
+                    <li>
+                        <span>26.11.2010</span>
+                        <a href="#">В 2010 году выставка Salon del Mobile обещает быть еще более расширенной и интересной</a>
+                    </li>
+                    <li>
+                        <span>26.11.2010</span>
+                        <a href="#">Нокиа свернула произодство телефонов в Финляднии</a>
+                    </li>
+                    <li>
+                        <span>26.11.2010</span>
+                        <a href="#">У южнокорейского сотового оператора украли данные миллионов абонентов</a>
+                    </li>
+                    <li>
+                        <span>26.11.2010</span>
+                        <a href="#">В 2010 году выставка Salon del Mobile обещает быть еще более расширенной и интересной</a>
+                    </li>
+                    <li>
+                        <span>26.11.2010</span>
+                        <a href="#">Нокиа свернула произодство телефонов в Финляднии</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </aside>
+
+        <div id="content">
+            <div class="filtr">
+                <form class="filtr_form" action="#" method="post">
+
+                    <span>Поиск по:</span>
+
+                    <input class="nomer" name="#" type="text"placeholder="Заказной номер">
+
+                    <select class="brend" name="#">
+                        <option value="">Бренду</option>
+                        <option value="Россия">Названию</option>
+                        <option value="США">Модели</option>
+                    </select>
+
+                    <input class="name" name="#" type="text" placeholder="Название">
+
+                    <input class="button" type="button" name="#" value="Найти">
+
+                </form>
+            </div>
+
+            <div class="novelty">
+                <span>Новинки</span>
+                <div class="show_all"><a href="#">Посмотреть все<i></i></a></div>
+                <div class="tovar_index">
+
+                    <ul>
+                        <li class="tovar">
+                            <img class="new_tovar" src="images/new.png" />
+                            <img src="images/tovar_1.png" />
+                            <a href="#">6ES7222-1BH30-0XB0</a>
+                            <span>
+                                Преобразователи SINAMICS S150 подходят для приводов с регулируемой частотой ...
+                            </span>
+                            <div class="green">
+                                125 859 u.e <a href="#">В корзину &#8594;</a>
+                            </div>
+                        </li>
+                        <li class="tovar">
+                            <img class="new_tovar" src="images/new.png" />
+                            <img src="images/tovar_1.png" />
+                            <a href="#">6ES7222-1BH30-0XB0</a>
+                            <span>
+                                Преобразователи SINAMICS S150 подходят для приводов с регулируемой частотой ...
+                            </span>
+                            <div class="green">
+                                125 859 u.e <a href="#">В корзину &#8594;</a>
+                            </div>
+                        </li>
+                        <li class="tovar">
+                            <img class="new_tovar" src="images/new.png" />
+                            <img src="images/tovar_1.png" />
+                            <a href="#">6ES7222-1BH30-0XB0</a>
+                            <span>
+                                Преобразователи SINAMICS S150 подходят для приводов с регулируемой частотой ...
+                            </span>
+                            <div class="green">
+                                125 859 u.e <a href="#">В корзину &#8594;</a>
+                            </div>
+                        </li>
+                        <li class="tovar">
+                            <img class="new_tovar" src="images/new.png" />
+                            <img src="images/tovar_1.png" />
+                            <a href="#">6ES7222-1BH30-0XB0</a>
+                            <span>
+                                Преобразователи SINAMICS S150 подходят для приводов с регулируемой частотой ...
+                            </span>
+                            <div class="green">
+                                125 859 u.e <a href="#">В корзину &#8594;</a>
+                            </div>
+                        </li>
+                        <li class="tovar" id="prev_last_novetly">
+                            <img class="new_tovar" src="images/new.png" />
+                            <img src="images/tovar_1.png" />
+                            <a href="#">6ES7222-1BH30-0XB0</a>
+                            <span>
+                                Преобразователи SINAMICS S150 подходят для приводов с регулируемой частотой ...
+                            </span>
+                            <div class="green">
+                                125 859 u.e <a href="#">В корзину &#8594;</a>
+                            </div>
+                        </li>
+                        <li class="tovar" id="last_novetly">
+                            <img class="new_tovar" src="images/new.png" />
+                            <img src="images/tovar_1.png" />
+                            <a href="#">6ES7222-1BH30-0XB0</a>
+                            <span>
+                                Преобразователи SINAMICS S150 подходят для приводов с регулируемой частотой ...
+                            </span>
+                            <div class="green">
+                                125 859 u.e <a href="#">В корзину &#8594;</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="novelty">
+                <span>Акция</span>
+                <div class="show_all"><a href="#">Посмотреть все<i></i></a></div>
+                <div class="tovar_index">
+
+                    <ul>
+                        <li class="tovar">
+                            <img class="new_tovar" src="images/stock.png" />
+                            <img src="images/tovar_2.png" />
+                            <a href="#">6ES7222-1BH30-0XB0</a>
+                            <span>
+                                Преобразователи SINAMICS S150 подходят для приводов с регулируемой частотой ...
+                            </span>
+                            <div class="red">
+                                125 859 u.e <a href="#">В корзину &#8594;</a>
+                            </div>
+                        </li>
+                        <li class="tovar">
+                            <img class="new_tovar" src="images/stock.png" />
+                            <img src="images/tovar_2.png" />
+                            <a href="#">6ES7222-1BH30-0XB0</a>
+                            <span>
+                                Преобразователи SINAMICS S150 подходят для приводов с регулируемой частотой ...
+                            </span>
+                            <div class="red">
+                                125 859 u.e <a href="#">В корзину &#8594;</a>
+                            </div>
+                        </li>
+                        <li class="tovar">
+                            <img class="new_tovar" src="images/stock.png" />
+                            <img src="images/tovar_2.png" />
+                            <a href="#">6ES7222-1BH30-0XB0</a>
+                            <span>
+                                Преобразователи SINAMICS S150 подходят для приводов с регулируемой частотой ...
+                            </span>
+                            <div class="red">
+                                125 859 u.e <a href="#">В корзину &#8594;</a>
+                            </div>
+                        </li>
+                        <li class="tovar">
+                            <img class="new_tovar" src="images/stock.png" />
+                            <img src="images/tovar_2.png" />
+                            <a href="#">6ES7222-1BH30-0XB0</a>
+                            <span>
+                                Преобразователи SINAMICS S150 подходят для приводов с регулируемой частотой ...
+                            </span>
+                            <div class="red">
+                                125 859 u.e <a href="#">В корзину &#8594;</a>
+                            </div>
+                        </li>
+                        <li class="tovar" id="prev_last_stock">
+                            <img class="new_tovar" src="images/stock.png" />
+                            <img src="images/tovar_2.png" />
+                            <a href="#">6ES7222-1BH30-0XB0</a>
+                            <span>
+                                Преобразователи SINAMICS S150 подходят для приводов с регулируемой частотой ...
+                            </span>
+                            <div class="red">
+                                125 859 u.e <a href="#">В корзину &#8594;</a>
+                            </div>
+                        </li>
+                        <li class="tovar" id="last_stock">
+                            <img class="new_tovar" src="images/stock.png" />
+                            <img src="images/tovar_2.png" />
+                            <a href="#">6ES7222-1BH30-0XB0</a>
+                            <span>
+                                Преобразователи SINAMICS S150 подходят для приводов с регулируемой частотой ...
+                            </span>
+                            <div class="red">
+                                125 859 u.e <a href="#">В корзину &#8594;</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="novelty">
+                <span>Рекомендуем</span>
+                <div class="show_all"><a href="#">Посмотреть все<i></i></a></div>
+                <div class="tovar_index">
+
+                    <ul>
+                        <li class="tovar">
+                            <img class="new_tovar" src="images/recomm.png" />
+                            <img src="images/tovar_3.png" />
+                            <a href="#">6ES7222-1BH30-0XB0</a>
+                            <span>
+                                Преобразователи SINAMICS S150 подходят для приводов с регулируемой частотой ...
+                            </span>
+                            <div class="blue">
+                                125 859 u.e <a href="#">В корзину &#8594;</a>
+                            </div>
+                        </li>
+                        <li class="tovar">
+                            <img class="new_tovar" src="images/recomm.png" />
+                            <img src="images/tovar_3.png" />
+                            <a href="#">6ES7222-1BH30-0XB0</a>
+                            <span>
+                                Преобразователи SINAMICS S150 подходят для приводов с регулируемой частотой ...
+                            </span>
+                            <div class="blue">
+                                125 859 u.e <a href="#">В корзину &#8594;</a>
+                            </div>
+                        </li>
+                        <li class="tovar">
+                            <img class="new_tovar" src="images/recomm.png" />
+                            <img src="images/tovar_3.png" />
+                            <a href="#">6ES7222-1BH30-0XB0</a>
+                            <span>
+                                Преобразователи SINAMICS S150 подходят для приводов с регулируемой частотой ...
+                            </span>
+                            <div class="blue">
+                                125 859 u.e <a href="#">В корзину &#8594;</a>
+                            </div>
+                        </li>
+                        <li class="tovar">
+                            <img class="new_tovar" src="images/recomm.png" />
+                            <img src="images/tovar_3.png" />
+                            <a href="#">6ES7222-1BH30-0XB0</a>
+                            <span>
+                                Преобразователи SINAMICS S150 подходят для приводов с регулируемой частотой ...
+                            </span>
+                            <div class="blue">
+                                125 859 u.e <a href="#">В корзину &#8594;</a>
+                            </div>
+                        </li>
+                        <li class="tovar" id="prev_last_recomm">
+                            <img class="new_tovar" src="images/recomm.png" />
+                            <img src="images/tovar_3.png" />
+                            <a href="#">6ES7222-1BH30-0XB0</a>
+                            <span>
+                                Преобразователи SINAMICS S150 подходят для приводов с регулируемой частотой ...
+                            </span>
+                            <div class="blue">
+                                125 859 u.e <a href="#">В корзину &#8594;</a>
+                            </div>
+                        </li>
+                        <li class="tovar" id="last_recomm">
+                            <img class="new_tovar" src="images/recomm.png" />
+                            <img src="images/tovar_3.png" />
+                            <a href="#">6ES7222-1BH30-0XB0</a>
+                            <span>
+                                Преобразователи SINAMICS S150 подходят для приводов с регулируемой частотой ...
+                            </span>
+                            <div class="blue">
+                                125 859 u.e <a href="#">В корзину &#8594;</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="novelty" id="about">
+                <span>О компании</span>
+                <div class="show_all"><a href="#">Посмотреть все<i></i></a></div>
+                <p>Компания «ТехноСфера» создана группой партнеров с целью оптимизации поставок промышленного оборудования ведущих мировых производителей, а также оказания услуг по техническому обслуживанию, ремонту и эксплуатации.</p>
+                <p><b>Направления деятельности:</b></p>
+                <p>Поставка электротехнического оборудования и средств промышленной автоматизации фирмы <a href="#">Siemens</a>, <a href="#">Rockwell Automation</a>, <a href="#">GE Fanuc</a>, <a href="#">Emerson</a>, <a href="#">Mitsubishi Electric</a>, <a href="#">Rittal</a>, <a href="#">Phoenix contact</a>, <a href="#">Endress+Hauser</a>, <a href="#">Pepperl+Fuchs</a>, <a href="#">SICK</a>, <a href="#">Turck</a>, <a href="#">Helukabel</a>, <a href="#">ABB</a>, <a href="#">Balluff</a>, <a href="#">Samson</a> и др.</p>
+                <p>Европейский сервис: техническое обслуживание, ремонт, оказание помощи по эксплуатации промышленного оборудования. Поставка труднодоступных и снятых с производства компонентов промышленной автоматизации.</p>
+                <p><b>Наши преимущества:</b></p>
+                <ul>
+                    <li>— Низкие цены.  Поставка осуществляется непосредственно с заводов-изготовителей</li>
+                    <li>— Кратчайшие сроки поставки.  Наличие оборудования на складе</li>
+                    <li>— Гарантийное и сервисное обслуживание</li>
+                    <li>— Доставка грузов до Вашего склада автомобильным, железнодорожным, авиа транспортом по всей территории РФ</li>
+
+                </ul>
+                <p>Специалисты нашей компании готовы провести технические консультации и подобрать оборудование при проектировании:</p>
+                <ul>
+                    <li>— АСУ ТП</li>
+                    <li>— Систем электропривода</li>
+                    <li>— Внутреннего и наружного электроснабжения и освещения</li>
+                    <li>— Релейной защиты и автоматики</li>
+                    <li>— Электрооборудования</li>
+                </ul>
+                <p>Мы гарантируем индивидуальный подход и готовы предложить Вам уникальные условия сотрудничества!</p>
+            </div>
+
+        </div>
+
+    </section><!-- #section -->
+</div><!-- #wrapper -->
+
+<footer id="footer">
+
+    <div class="white_bottom">
+        <div class="menu_bottom">
+            <ul>
+                <li class="selected"><a href="#">Главная</a></li>
+                <li><a href="#">О компании</a></li>
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#">Новости</a></li>
+                <li><a href="#">Цены</a></li>
+                <li><a href="#">Склад</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+
+            <div class="about_bottom">
+                <a href="#"><i></i>620089, г.Екатеринбург, ул.Машинная, д.42а, оф.303</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="black_bottom">
+        <div class="black_line_bottom">
+            <span class="copy">© 2012 «t-sfera.com»—это, продажа средств цифровой защиты и современных продуктов быта в Екатеринбурге, Свердловской области и регионах России.</span>
+            <div class="logotip">
+                Разработка сайта: <a href="#">СПИЧКА</a>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        $(".menu").fitText(7.5, { minFontSize: '12px', maxFontSize: '16px' });
+        $(".filtr_form").fitText(6.5, { minFontSize: '12px', maxFontSize: '16px' });
+        $(".nomer").fitText(1.3, { minFontSize: '12px', maxFontSize: '16px' });
+        $(".brend").fitText(1.1, { minFontSize: '12px', maxFontSize: '16px' });
+        $(".name").fitText(1.3, { minFontSize: '12px', maxFontSize: '16px' });
+        $(".copy").fitText(8.6, { minFontSize: '12px', maxFontSize: '14px' });
+    </script>
+</footer><!-- #footer -->
+
+</body>
+</html>
