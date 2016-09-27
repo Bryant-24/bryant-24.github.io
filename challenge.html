@@ -109,118 +109,83 @@
 			<strong>Вопрос №3.</strong> Имеется список из 11 сайтов. Необходимо спарсить товары с указанных сайтов, привести к единому виду и записать в одну таблицу базы данных MySQL. Категории товаров аналогично должны быть приведены к единому виду с сохранением иерархии, а затем записаны в отдельную таблицу базы данных. Могут быть использованы дополнительные таблицы при необходимости (например для записи связей или технических характеристик продукции). Описать общую стратегию выполнения данной задачи, а также дать детальный разбор получения информации с каждого сайта.
 		</p>
 		<ul>
-			<li><a href="http://sakurafilter.com">http://sakurafilter.com</a></li>
-			<li><a href="https://catalog.donaldson.com/">https://catalog.donaldson.com/</a></li>
-			<li><a href="https://catalog.mann-filter.com/EU/rus">https://catalog.mann-filter.com/EU/rus</a></li>
-			<li><a href="http://catalog.baldwinfilter.com/">http://catalog.baldwinfilter.com/</a></li>
-			<li><a href="http://shop.sf-filter.de/vergleichsliste.aspx">http://shop.sf-filter.de/vergleichsliste.aspx</a></li>
-			<li><a href="https://hifi-filter.com/en/catalog/recherche-equivalence.html">https://hifi-filter.com/en/catalog/recherche-equivalence.html</a></li>
-			<li><a href="http://www.filfilter.com.tr/en/oc-muadil-urun-ref.php">http://www.filfilter.com.tr/en/oc-muadil-urun-ref.php</a></li>
-			<li><a href="http://tsn.tsitron.ru/tsn/catalogue/?search_text=9.8.34&criterion_search=1&coincidence=1">http://tsn.tsitron.ru/tsn/catalogue/?search_text=9.8.34&criterion_search=1&coincidence=1</a></li>
-			<li><a href="http://wixeurope.com/cross-list,1714.html">http://wixeurope.com/cross-list,1714.html</a></li>
-			<li><a href="http://ows-cdn.tecdoc.net/stellox/home.jsp?server=4&time=21/9/2016-9:34:7#9f0a7faf39ddd73a2e22f14a94f205fa">http://ows-cdn.tecdoc.net/stellox/home.jsp?server=4&time=21/9/2016-9:34:7#9f0a7faf39ddd73a2e22f14a94f205fa</a></li>
-			<li><a href="https://catalog.cumminsfiltration.com/catalog/CatalogSearch.do">https://catalog.cumminsfiltration.com/catalog/CatalogSearch.do</a></li>
-		</ul>
-		<p>Перед созданием парсера необходмо изучить сайты-доноры и учесть несколько нюансов при написании самого парсера:</p>
-		<ul>
-			<li>Необходимо изучить сайты на предмет наличия URL товаров в карте сайта (если пути до товаров жестко прописаны в <em>sitemap.xml</em>).</li>
-			<li>Используя регулярные выражения и поиск по подстроке создать список страниц-доноров, с которых будем "грабить" информацию (в том числе при помощи GET и POST запросов).</li>
-		</ul>
-		<p>Общая стратегия: при парсинге товаров я бы использовал таблицу, ключом в которой выбрал бы номер детали (артикул). Также нужна таблица с перечисленными группами (легковые, грузовые и прочие), списком производителей этих товаров.</p>
-		<div class="row">
-			<div class="col-md-4">
-				<img class="img-responsive" src="http://www.sakurafilter.com/css/sakura/images/sakura_logo2.png" alt="">
-				<em>http://sakurafilter.com</em>
-			</div>
-			<div class="col-md-8">
-				<p>На данном сайте возможен поиск:</p>
-				<ul>
-					<li>по номеру детали</li>
-					<li>поиск изделия по региону</li>
-					<li>поиск по размерам и/или типу фильтра</li>
-					<li>а также список устаревших/заменяемых продуктов</li>
-				</ul>
-				<p>При помощи парсинга из SELECT можно составить список тех страниц, которые необходимо будет парсить. Сама форма отправляет данные методом POST.</p>
-				<p>Например, при поиске фильтров по размерам/типу фильтров будут использованы поля <em>"filter_type"</em>, <em>"shape"</em> и <em>"type_detail"</em>.</p>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-8">
-				<p>Сайт по данному URL недоступен, но работает домен первого уровня (<a href="donaldson.com">donaldson.com</a>)</p>
-				<p>На данном сайте есть страница (<a href="http://www.emea.donaldson.com/en/about/products/index.html">http://www.emea.donaldson.com/en/about/products/index.html</a>) с полным перечнем групп товаров. Нас, вероятно, будет интересовать группа "Air Filters". Если проваливаться в саму группу, то информации по товарам, как и самих товаров, очень мало. Вся информация хранится в виде PDF-файлов.</p>
-			</div>
-			<div class="col-md-4 bg-primary" style="padding: 15px">
-				<img class="img-responsive" src="http://emea.donaldson.com/ru/images/homeLogo.gif" alt="">
-				<em>https://catalog.donaldson.com/<br>(недоступен, но доступен домен первого уровня)</em>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-4">
-				<img class="img-responsive" src="https://catalog.mann-filter.com/files/imagesVariablePath/mann-filter-logo.jpg" alt="">
-				<em>https://catalog.mann-filter.com</em>
-			</div>
-			<div class="col-md-8">
-				<p>На данном сайте возможен поиск:</p>
-				<ul>
-					<li>
-						по транспортных средств:
-						<ul>
-							<li>Легковые автомобили + автомобили-фургоны</li>
-							<li>Грузовые автомобили и автобусы</li>
-							<li>Машины для внедорожного применения</li>
-							<li>Мотоциклы</li>
-						</ul>
-					</li>
-				</ul>
-				<p>Есть также поиск по продуктам и сравнительныи номерам. Зная, что у каждого товара (в нашем случае фильтров) есть артикул, можем сделать поиск по артиклу, либо сделать поиск по группе товаров.</p>
-				<p>Для каждой группы есть свой URL:</p>
+			<li>
+				<a href="http://sakurafilter.com">http://sakurafilter.com</a><br>
+				<strong>Страница для парсинга:</strong> <a href="http://sakurafilter.com/index.php/product/dimsearch">http://sakurafilter.com/index.php/product/dimsearch</a><br>
+				<strong>Как парсить:</strong> в поле "Filter Type" считываем все имеющиеся значения. Далее при подстановке первого значения в данном поле начинают подтягиваться и значения во второе поле - "Shape", благодаря чему у нас увеличивается кол-во возможных запросов.<br>
+				И, наконец есть третье поле, которое также имеет подгрузку данных после того, как были выбраны первые два поля. В результате комбинирования разных пунктов в этиъ полях и отправке поле мы получаем (если есть) таблицу с товарами.
+			</li>
+			<li>
+				<a href="https://catalog.mann-filter.com/EU/rus">https://catalog.mann-filter.com/EU/rus</a><br>
+				<strong>Страница для парсинга:</strong> <a href="https://catalog.mann-filter.com/EU/rus">https://catalog.mann-filter.com/EU/rus</a><br>
+				<strong>Как парсить:</strong> данный сайт похож на предыдущий, но имеет небольшое отличие: теперь мы имеем 4 разных URl, которые также работают через SELECT, но кол-во которых уже равно 2: а именно "Производитель" и "Модельны ряд":
 				<ul>
 					<li>https://catalog.mann-filter.com/EU/rus/vehicle/MANN-FILTER/Katalog/Europa/Транспортные%20средства/</li>
 					<li>https://catalog.mann-filter.com/EU/rus/vehicle/MANN-FILTER/Katalog/Europa/Грузовые%20автомобили%20%2B%20автобусы/</li>
 					<li>https://catalog.mann-filter.com/EU/rus/vehicle/MANN-FILTER/Katalog/Europa/Машины%20для%20внедорожного%20применения/</li>
 					<li>https://catalog.mann-filter.com/EU/rus/vehicle/MANN-FILTER/Katalog/Europa/Мотоциклы/</li>
 				</ul>
-				<p>На каждой такой странице есть SELECT с выбором производителя. Изучив внутрениие страницы можно получить методом подстроки все возможные варианты страниц, например:</p>
-				<ul>
-					<li>https://catalog.mann-filter.com/EU/rus/vehicle/MANN-FILTER/Katalog/Europa/ - общая страница</li>
-					<li>Мотоциклы/ - Группа ТС</li>
-					<li>APRILIA/ - Производитель</li>
-					<li>125/ - Модельный ряд</li>
-				</ul>
-			</div>
-		</div>
+			</li>
+			<li>
+				<a href="http://catalog.baldwinfilter.com/">http://catalog.baldwinfilter.com/</a><br>
+				<strong>Страница для парсинга:</strong> <a href="http://catalog.baldwinfilter.com/startproductguide.html">http://catalog.baldwinfilter.com/startproductguide.html</a><br>
+				<strong>Как парсить:</strong> открыв ссылку для парсинга, переходим в меню: "Catalog Information" -> "Size Chart Search" и далее выбрать "Английское измерение".<br>
+				На открывшейся странице получаем пункты, по которым будем искать товары. Выбираем поочередно каждый пункт и отправляем пустую форму, кликнув по кнопке "Найти".<br>
+				В результате каждой операции нам откроется таблица с перечнем товаров.
+			</li>
 
-		<div class="row">
-			<div class="col-md-8">
-				<p>Если перейти на страницу http://catalog.baldwinfilter.com/startproductguide.html, выбрать в меню: "Catalog Information" -> "Size Chart Search" и далее выбрать "Английское измерение", то откроется поиск по фильтрам.</p>
-				<p>Данные подгружаются методом AJAX, поэтому необходимо будет делать соответствующие запросы. Также есть поиск по номеру и другим критериям товаров.</p>
-			</div>
-			<div class="col-md-4" style="padding: 15px">
-				<img class="img-responsive" src="http://catalog.baldwinfilter.com/Images1/BFBrandDB0707.gif" alt="">
-				<em>http://catalog.baldwinfilter.com/</em>
-			</div>
-		</div>
+			<li>
+				<a href="http://shop.sf-filter.de/vergleichsliste.aspx">http://shop.sf-filter.de/vergleichsliste.aspx</a><br>
+				<strong>Страница для парсинга:</strong> <a href="http://shop.sf-filter.de/vergleichsliste.aspx">http://shop.sf-filter.de/vergleichsliste.aspx</a><br>
+				<strong>Как парсить:</strong> на сайте несколько разделов, открываем нужный нам раздел, считываем возможные варианты из первого SELECT (Производитель), после получаем второй SELECT (Модель), третий (Тип).<br>
+				Подставляя разные варианты этих трех SELECT получаем разные тоавры, которы и будем парсить.
+			</li>
+			<li>
+				<a href="https://hifi-filter.com/en/catalog/recherche-equivalence.html">https://hifi-filter.com/en/catalog/recherche-equivalence.html</a><br>
+				<strong>Страница для парсинга:</strong> <a href="https://hifi-filter.com/en/page/filter-construction-equipment.html">https://hifi-filter.com/en/page/filter-construction-equipment.html</a><br>
+				<strong>Как парсить:</strong> на сайте товары также разбиты на категории. Выбираем категорию и жмем "Найти фильтры". Выходит страница с SELECT (Бренд), где нам дают выбрать один из пунктов. После чего выходит таблица с результатами для парсера.
+			</li>
 
-		<div class="row">
-			<div class="col-md-4">
-				<img class="img-responsive" src="http://shop.sf-filter.de/images/SF-Filter-Logo.jpg" alt="">
-				<em>http://shop.sf-filter.de/vergleichsliste.aspx</em>
-			</div>
-			<div class="col-md-8">
-				<p>На данном сайте все нужные нам товары также разбиты по группам, которые находятся по разным URL:</p>
-				<ul>
-					<li>http://shop.sf-filter.de/mobilefilterselect.aspx?Katalog=PW&Titel=Automobile - Filters for Automobile</li>
-					<li>http://shop.sf-filter.de/mobilefilterselect.aspx?Katalog=LKW&Titel=Trucks - Filters for Trucks и так далее</li>
-				</ul>
-				<p>На каждой странице есть форма: "Производитель", "Модель", "Год, двигатель".</p>
-				<p>Подгрузка происходит также методом AJAX, что даем направление парсить поочередно элементы первой формы и передавать их в запросе.</p>
-				<p>В результате выходит список найденных товаров, который также содержит в себе фотографию товара.</p>
-			</div>
-		</div>
+			<li>
+				<a href="http://www.filfilter.com.tr/en/oc-muadil-urun-ref.php">http://www.filfilter.com.tr/en/oc-muadil-urun-ref.php</a><br>
+				<strong>Страница для парсинга:</strong> <a href="http://www.filfilter.com.tr/en/oc-urunler.php">http://www.filfilter.com.tr/en/oc-urunler.php</a><br>
+				<strong>Как парсить:</strong> дается на выбор поиск по категориям. Выбираем, например, поиск по продуктам, далее выбираем в первом SELECT (Тип) и во втором (Статус) какое-либо значение и получаем список товаров.
+			</li>
 
+			<li>
+				<a href="http://tsn.tsitron.ru/tsn/catalogue/?search_text=9.8.34&criterion_search=1&coincidence=1">http://tsn.tsitron.ru/tsn/catalogue/?search_text=9.8.34&criterion_search=1&coincidence=1</a><br>
+				<strong>Страница для парсинга:</strong> <a href="http://tsn.tsitron.ru/tsn/catalogue/?search_text=9.8.34&criterion_search=1&coincidence=1">http://tsn.tsitron.ru/tsn/catalogue/?search_text=9.8.34&criterion_search=1&coincidence=1</a><br>
+				<strong>Как парсить:</strong> на сайте есть пункт меню "Скачать прайс". Скачать, сделать экспорт из Excel в БД.
+			</li>
 
+			<li>
+				<a href="http://wixeurope.com/cross-list,1714.html">http://wixeurope.com/cross-list,1714.html</a><br>
+				<strong>Страница для парсинга:</strong> <a href="http://wixeurope.com/cross-list,1714.html">http://wixeurope.com/cross-list,1714.html</a><br>
+				<strong>Как парсить:</strong> сайт разбит на группы (Легковые, Грузовики и Автобусы и прочие). Выбираем группу, путем подстановки значениц в SELECT (Марка и Модель) получаем таблицу с товарами.
+			</li>
+
+			<li>
+				<a href="http://ows-cdn.tecdoc.net/stellox/home.jsp?server=4&time=21/9/2016-9:34:7#9f0a7faf39ddd73a2e22f14a94f205fa">http://ows-cdn.tecdoc.net/stellox/home.jsp?server=4&time=21/9/2016-9:34:7#9f0a7faf39ddd73a2e22f14a94f205fa</a><br>
+				<strong>Страница для парсинга:</strong> <a href="http://ows-cdn.tecdoc.net/stellox/home.jsp?server=4&time=21/9/2016-9:34:7#9f0a7faf39ddd73a2e22f14a94f205fa">http://ows-cdn.tecdoc.net/stellox/home.jsp?server=4&time=21/9/2016-9:34:7#9f0a7faf39ddd73a2e22f14a94f205fa</a><br>
+				<strong>Как парсить:</strong> сайт также разбит на группы (Легковые, Грузовики и Автобусы и прочие). Выбираем группу, путем подстановки значениц в SELECT (Производитель и Модель) получаем таблицу с товарами.
+			</li>
+
+			<li>
+				<a href="http://ows-cdn.tecdoc.net/stellox/home.jsp?server=4&time=21/9/2016-9:34:7#9f0a7faf39ddd73a2e22f14a94f205fa">http://ows-cdn.tecdoc.net/stellox/home.jsp?server=4&time=21/9/2016-9:34:7#9f0a7faf39ddd73a2e22f14a94f205fa</a><br>
+				<strong>Страница для парсинга:</strong> <a href="http://ows-cdn.tecdoc.net/stellox/home.jsp?server=4&time=21/9/2016-9:34:7#9f0a7faf39ddd73a2e22f14a94f205fa">http://ows-cdn.tecdoc.net/stellox/home.jsp?server=4&time=21/9/2016-9:34:7#9f0a7faf39ddd73a2e22f14a94f205fa</a><br>
+				<strong>Как парсить:</strong> сайт также разбит на группы (Легковые, Грузовики и Автобусы и прочие). Выбираем группу, путем подстановки значениц в SELECT (Производитель и Модель) получаем таблицу с товарами.
+			</li>
+			<li>
+				<a href="https://catalog.cumminsfiltration.com/catalog/CatalogSearch.do">https://catalog.cumminsfiltration.com/catalog/CatalogSearch.do</a><br>
+				<strong>Страница для парсинга:</strong> <a href="https://catalog.cumminsfiltration.com/catalog/CatalogSearch.do">https://catalog.cumminsfiltration.com/catalog/CatalogSearch.do</a><br>
+				<strong>Как парсить:</strong> в поле поиска указываем, что хотим найти все делати (символ "*"), и получаем список товаров.
+			</li>
+		</ul>
 	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 </body>
 </html>
