@@ -1,5 +1,8 @@
 #PSDs
 psd/
 
+#OLDs
+old/
+
 #FTP
 .ftpconfig
