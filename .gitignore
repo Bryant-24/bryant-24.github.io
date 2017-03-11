@@ -1,5 +1,11 @@
-#PSDs
+#node_modules
+node_modules/
+
+#PSDs for site
 psd/
 
 #OLDs projects
 old/
+
+#CNAME
+CNAME
