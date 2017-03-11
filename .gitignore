@@ -1,8 +1,5 @@
 #PSDs
 psd/
 
-#OLDs
+#OLDs projects
 old/
-
-#FTP
-.ftpconfig
